@@ -4,7 +4,7 @@
 #
 Name     : asciidoc
 Version  : 8.6.9
-Release  : 17
+Release  : 18
 URL      : http://downloads.sourceforge.net/asciidoc/asciidoc-8.6.9.tar.gz
 Source0  : http://downloads.sourceforge.net/asciidoc/asciidoc-8.6.9.tar.gz
 Summary  : No detailed summary available
