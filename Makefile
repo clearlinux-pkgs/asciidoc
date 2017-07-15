@@ -1,4 +1,5 @@
 PKG_NAME := asciidoc
-URL := http://downloads.sourceforge.net/asciidoc/asciidoc-8.6.9.tar.gz
+URL := https://sourceforge.net/projects/asciidoc/files/asciidoc/8.6.9/asciidoc-8.6.9.tar.gz
+
 
 include ../common/Makefile.common

@@ -4,9 +4,9 @@
 #
 Name     : asciidoc
 Version  : 8.6.9
-Release  : 19
-URL      : http://downloads.sourceforge.net/asciidoc/asciidoc-8.6.9.tar.gz
-Source0  : http://downloads.sourceforge.net/asciidoc/asciidoc-8.6.9.tar.gz
+Release  : 21
+URL      : https://sourceforge.net/projects/asciidoc/files/asciidoc/8.6.9/asciidoc-8.6.9.tar.gz
+Source0  : https://sourceforge.net/projects/asciidoc/files/asciidoc/8.6.9/asciidoc-8.6.9.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -14,6 +14,7 @@ Requires: asciidoc-bin
 Requires: asciidoc-data
 Requires: asciidoc-doc
 BuildRequires : graphviz
+BuildRequires : python-dev
 BuildRequires : sed
 BuildRequires : source-highlight
 
@@ -50,16 +51,23 @@ doc components for the asciidoc package.
 %setup -q -n asciidoc-8.6.9
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
+export LANG=C
+export SOURCE_DATE_EPOCH=1500142118
 %configure --disable-static --sysconfdir=/usr/share/asciidoc/conf
 make V=1  %{?_smp_mflags}
 
 %check
+export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 python ./tests/testasciidoc.py update ; python ./tests/testasciidoc.py run
 
 %install
+export SOURCE_DATE_EPOCH=1500142118
 rm -rf %{buildroot}
 %make_install
 
