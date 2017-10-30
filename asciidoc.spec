@@ -4,7 +4,7 @@
 #
 Name     : asciidoc
 Version  : 8.6.9
-Release  : 21
+Release  : 22
 URL      : https://sourceforge.net/projects/asciidoc/files/asciidoc/8.6.9/asciidoc-8.6.9.tar.gz
 Source0  : https://sourceforge.net/projects/asciidoc/files/asciidoc/8.6.9/asciidoc-8.6.9.tar.gz
 Summary  : No detailed summary available
@@ -55,7 +55,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1500142118
+export SOURCE_DATE_EPOCH=1509381869
 %configure --disable-static --sysconfdir=/usr/share/asciidoc/conf
 make V=1  %{?_smp_mflags}
 
@@ -67,7 +67,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 python ./tests/testasciidoc.py update ; python ./tests/testasciidoc.py run
 
 %install
-export SOURCE_DATE_EPOCH=1500142118
+export SOURCE_DATE_EPOCH=1509381869
 rm -rf %{buildroot}
 %make_install
 
@@ -98,19 +98,15 @@ rm -rf %{buildroot}
 /usr/share/asciidoc/conf/asciidoc/filters/code/code-filter.conf
 /usr/share/asciidoc/conf/asciidoc/filters/code/code-filter.py
 /usr/share/asciidoc/conf/asciidoc/filters/code/code-filter.pyc
-/usr/share/asciidoc/conf/asciidoc/filters/code/code-filter.pyo
 /usr/share/asciidoc/conf/asciidoc/filters/graphviz/graphviz-filter.conf
 /usr/share/asciidoc/conf/asciidoc/filters/graphviz/graphviz2png.py
 /usr/share/asciidoc/conf/asciidoc/filters/graphviz/graphviz2png.pyc
-/usr/share/asciidoc/conf/asciidoc/filters/graphviz/graphviz2png.pyo
 /usr/share/asciidoc/conf/asciidoc/filters/latex/latex-filter.conf
 /usr/share/asciidoc/conf/asciidoc/filters/latex/latex2png.py
 /usr/share/asciidoc/conf/asciidoc/filters/latex/latex2png.pyc
-/usr/share/asciidoc/conf/asciidoc/filters/latex/latex2png.pyo
 /usr/share/asciidoc/conf/asciidoc/filters/music/music-filter.conf
 /usr/share/asciidoc/conf/asciidoc/filters/music/music2png.py
 /usr/share/asciidoc/conf/asciidoc/filters/music/music2png.pyc
-/usr/share/asciidoc/conf/asciidoc/filters/music/music2png.pyo
 /usr/share/asciidoc/conf/asciidoc/filters/source/source-highlight-filter.conf
 /usr/share/asciidoc/conf/asciidoc/help.conf
 /usr/share/asciidoc/conf/asciidoc/html4.conf
