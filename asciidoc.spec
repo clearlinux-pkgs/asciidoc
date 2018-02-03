@@ -4,7 +4,7 @@
 #
 Name     : asciidoc
 Version  : 8.6.9
-Release  : 23
+Release  : 24
 URL      : https://sourceforge.net/projects/asciidoc/files/asciidoc/8.6.9/asciidoc-8.6.9.tar.gz
 Source0  : https://sourceforge.net/projects/asciidoc/files/asciidoc/8.6.9/asciidoc-8.6.9.tar.gz
 Summary  : No detailed summary available
@@ -17,6 +17,7 @@ BuildRequires : graphviz
 BuildRequires : python-dev
 BuildRequires : sed
 BuildRequires : source-highlight
+Patch1: py2
 
 %description
 version 8.6.9, 9 November 2013
@@ -49,15 +50,16 @@ doc components for the asciidoc package.
 
 %prep
 %setup -q -n asciidoc-8.6.9
+%patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1509381869
+export SOURCE_DATE_EPOCH=1517699923
 %configure --disable-static --sysconfdir=/usr/share/asciidoc/conf
-make V=1  %{?_smp_mflags}
+make  %{?_smp_mflags}
 
 %check
 export LANG=C
@@ -67,7 +69,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 python ./tests/testasciidoc.py update ; python ./tests/testasciidoc.py run
 
 %install
-export SOURCE_DATE_EPOCH=1509381869
+export SOURCE_DATE_EPOCH=1517699923
 rm -rf %{buildroot}
 %make_install
 
