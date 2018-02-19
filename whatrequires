@@ -23,7 +23,6 @@ gtk3
 hexchat
 inputproto
 isa-l
-javapackages-tools
 kmod
 libXi
 libjpeg-turbo
@@ -40,12 +39,12 @@ linux-hyperv-lts
 linux-hyperv-mini
 linux-kvm
 linux-lts
+linux-pk414
 linux-tools
 moka-icon-theme
 nasm
 ndctl
 qemu
-scala
 spice
 spice-gtk
 syslinux
