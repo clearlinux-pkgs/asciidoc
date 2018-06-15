@@ -15,7 +15,7 @@ Requires: asciidoc-data
 Requires: asciidoc-license
 Requires: asciidoc-man
 BuildRequires : graphviz
-BuildRequires : python-dev
+
 BuildRequires : sed
 BuildRequires : source-highlight
 Patch1: py2.patch
