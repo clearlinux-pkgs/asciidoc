@@ -1,14 +1,23 @@
 # This file contains recursive sources that require this package
 LVM2
-R-IRkernel
+R-NMF
 R-devtools
+R-doRNG
 R-git2r
-R-pbdZMQ
+R-modelr
+R-pkgmaker
+R-reprex
+R-rngtools
 R-roxygen2
+R-rstanarm
+R-tidyverse
 adwaita-icon-theme
 autofs
 cgit
 cheese
+clr-init
+dracut
+dstat
 edk2
 faba-icon-theme
 filesystem
@@ -17,11 +26,10 @@ gdk-pixbuf
 gedit
 gimp
 git
+gnome-photos
 gst-plugins-good
 gtk+
-gtk3
 hexchat
-inputproto
 isa-l
 kmod
 libXi
@@ -30,7 +38,7 @@ libjpeg-turbo-soname8
 libmediaart
 libvirt
 libvpx
-libxcb
+libzmq
 linux
 linux-aws
 linux-gce
@@ -39,6 +47,7 @@ linux-hyperv-lts
 linux-hyperv-mini
 linux-kvm
 linux-lts
+linux-oracle
 linux-pk414
 linux-tools
 moka-icon-theme

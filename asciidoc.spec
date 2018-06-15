@@ -4,7 +4,7 @@
 #
 Name     : asciidoc
 Version  : 8.6.9
-Release  : 30
+Release  : 31
 URL      : https://sourceforge.net/projects/asciidoc/files/asciidoc/8.6.9/asciidoc-8.6.9.tar.gz
 Source0  : https://sourceforge.net/projects/asciidoc/files/asciidoc/8.6.9/asciidoc-8.6.9.tar.gz
 Summary  : No detailed summary available
@@ -12,7 +12,8 @@ Group    : Development/Tools
 License  : GPL-2.0
 Requires: asciidoc-bin
 Requires: asciidoc-data
-Requires: asciidoc-doc
+Requires: asciidoc-license
+Requires: asciidoc-man
 BuildRequires : graphviz
 BuildRequires : python-dev
 BuildRequires : sed
@@ -27,6 +28,8 @@ __________________________________________________________________
 Summary: bin components for the asciidoc package.
 Group: Binaries
 Requires: asciidoc-data
+Requires: asciidoc-license
+Requires: asciidoc-man
 
 %description bin
 bin components for the asciidoc package.
@@ -40,12 +43,20 @@ Group: Data
 data components for the asciidoc package.
 
 
-%package doc
-Summary: doc components for the asciidoc package.
-Group: Documentation
+%package license
+Summary: license components for the asciidoc package.
+Group: Default
 
-%description doc
-doc components for the asciidoc package.
+%description license
+license components for the asciidoc package.
+
+
+%package man
+Summary: man components for the asciidoc package.
+Group: Default
+
+%description man
+man components for the asciidoc package.
 
 
 %prep
@@ -57,14 +68,17 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1519230289
+export SOURCE_DATE_EPOCH=1529090839
 %configure --disable-static --sysconfdir=/usr/share/asciidoc/conf \
 PYTHON=/usr/bin/python2
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1519230289
+export SOURCE_DATE_EPOCH=1529090839
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/doc/asciidoc
+cp COPYRIGHT %{buildroot}/usr/share/doc/asciidoc/COPYRIGHT
+cp COPYING %{buildroot}/usr/share/doc/asciidoc/COPYING
 %make_install
 
 %files
@@ -161,6 +175,12 @@ rm -rf %{buildroot}
 /usr/share/asciidoc/conf/asciidoc/xhtml11-quirks.conf
 /usr/share/asciidoc/conf/asciidoc/xhtml11.conf
 
-%files doc
+%files license
 %defattr(-,root,root,-)
-%doc /usr/share/man/man1/*
+/usr/share/doc/asciidoc/COPYING
+/usr/share/doc/asciidoc/COPYRIGHT
+
+%files man
+%defattr(-,root,root,-)
+/usr/share/man/man1/a2x.1
+/usr/share/man/man1/asciidoc.1
