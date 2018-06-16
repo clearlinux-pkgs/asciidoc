@@ -4,7 +4,7 @@
 #
 Name     : asciidoc
 Version  : cd6762bd16b20e5cf19ceaffb8452df912bb5f6e
-Release  : 34
+Release  : 35
 URL      : https://github.com/asciidoc/asciidoc-py3/archive/cd6762bd16b20e5cf19ceaffb8452df912bb5f6e.tar.gz
 Source0  : https://github.com/asciidoc/asciidoc-py3/archive/cd6762bd16b20e5cf19ceaffb8452df912bb5f6e.tar.gz
 Summary  : No detailed summary available
@@ -14,6 +14,9 @@ Requires: asciidoc-bin
 Requires: asciidoc-data
 Requires: asciidoc-license
 Requires: asciidoc-man
+Requires: docbook-xml
+Requires: libxml2-bin
+Requires: libxslt
 BuildRequires : docbook-xml
 BuildRequires : graphviz
 BuildRequires : libxml2-dev
@@ -74,12 +77,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1529169862
+export SOURCE_DATE_EPOCH=1529170137
 %reconfigure --disable-static --sysconfdir=/usr/share/asciidoc/conf
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1529169862
+export SOURCE_DATE_EPOCH=1529170137
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/asciidoc
 cp COPYRIGHT %{buildroot}/usr/share/doc/asciidoc/COPYRIGHT
