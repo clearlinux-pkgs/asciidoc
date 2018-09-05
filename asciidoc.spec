@@ -4,7 +4,7 @@
 #
 Name     : asciidoc
 Version  : cd6762bd16b20e5cf19ceaffb8452df912bb5f6e
-Release  : 35
+Release  : 36
 URL      : https://github.com/asciidoc/asciidoc-py3/archive/cd6762bd16b20e5cf19ceaffb8452df912bb5f6e.tar.gz
 Source0  : https://github.com/asciidoc/asciidoc-py3/archive/cd6762bd16b20e5cf19ceaffb8452df912bb5f6e.tar.gz
 Summary  : No detailed summary available
@@ -77,16 +77,16 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1529170137
+export SOURCE_DATE_EPOCH=1536137479
 %reconfigure --disable-static --sysconfdir=/usr/share/asciidoc/conf
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1529170137
+export SOURCE_DATE_EPOCH=1536137479
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/asciidoc
-cp COPYRIGHT %{buildroot}/usr/share/doc/asciidoc/COPYRIGHT
 cp COPYING %{buildroot}/usr/share/doc/asciidoc/COPYING
+cp COPYRIGHT %{buildroot}/usr/share/doc/asciidoc/COPYRIGHT
 %make_install
 
 %files
@@ -113,16 +113,12 @@ cp COPYING %{buildroot}/usr/share/doc/asciidoc/COPYING
 /usr/share/asciidoc/conf/asciidoc/docbook-xsl/text.xsl
 /usr/share/asciidoc/conf/asciidoc/docbook-xsl/xhtml.xsl
 /usr/share/asciidoc/conf/asciidoc/docbook45.conf
-/usr/share/asciidoc/conf/asciidoc/filters/code/__pycache__/code-filter.cpython-36.pyc
 /usr/share/asciidoc/conf/asciidoc/filters/code/code-filter.conf
 /usr/share/asciidoc/conf/asciidoc/filters/code/code-filter.py
-/usr/share/asciidoc/conf/asciidoc/filters/graphviz/__pycache__/graphviz2png.cpython-36.pyc
 /usr/share/asciidoc/conf/asciidoc/filters/graphviz/graphviz-filter.conf
 /usr/share/asciidoc/conf/asciidoc/filters/graphviz/graphviz2png.py
-/usr/share/asciidoc/conf/asciidoc/filters/latex/__pycache__/latex2img.cpython-36.pyc
 /usr/share/asciidoc/conf/asciidoc/filters/latex/latex-filter.conf
 /usr/share/asciidoc/conf/asciidoc/filters/latex/latex2img.py
-/usr/share/asciidoc/conf/asciidoc/filters/music/__pycache__/music2png.cpython-36.pyc
 /usr/share/asciidoc/conf/asciidoc/filters/music/music-filter.conf
 /usr/share/asciidoc/conf/asciidoc/filters/music/music2png.py
 /usr/share/asciidoc/conf/asciidoc/filters/source/source-highlight-filter.conf
