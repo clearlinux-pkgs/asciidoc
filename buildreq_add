@@ -2,8 +2,8 @@
 # picked up automatically. One name per line, no whitespace.
 graphviz
 source-highlight
+python3
 python3-dev
-python-core
 libxml2-dev
 docbook-xml
 libxslt

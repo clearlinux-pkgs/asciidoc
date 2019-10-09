@@ -4,16 +4,16 @@
 #
 Name     : asciidoc
 Version  : cd6762bd16b20e5cf19ceaffb8452df912bb5f6e
-Release  : 37
+Release  : 38
 URL      : https://github.com/asciidoc/asciidoc-py3/archive/cd6762bd16b20e5cf19ceaffb8452df912bb5f6e.tar.gz
 Source0  : https://github.com/asciidoc/asciidoc-py3/archive/cd6762bd16b20e5cf19ceaffb8452df912bb5f6e.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
-Requires: asciidoc-bin
-Requires: asciidoc-data
-Requires: asciidoc-license
-Requires: asciidoc-man
+Requires: asciidoc-bin = %{version}-%{release}
+Requires: asciidoc-data = %{version}-%{release}
+Requires: asciidoc-license = %{version}-%{release}
+Requires: asciidoc-man = %{version}-%{release}
 Requires: docbook-xml
 Requires: libxml2-bin
 Requires: libxslt
@@ -22,7 +22,7 @@ BuildRequires : graphviz
 BuildRequires : libxml2-dev
 BuildRequires : libxslt
 BuildRequires : libxslt-dev
-BuildRequires : python-core
+BuildRequires : python3
 BuildRequires : python3-dev
 BuildRequires : sed
 BuildRequires : source-highlight
@@ -36,9 +36,8 @@ from the Jimmac icons to get round MS IE and FOP PNG incompatibilies.
 %package bin
 Summary: bin components for the asciidoc package.
 Group: Binaries
-Requires: asciidoc-data
-Requires: asciidoc-license
-Requires: asciidoc-man
+Requires: asciidoc-data = %{version}-%{release}
+Requires: asciidoc-license = %{version}-%{release}
 
 %description bin
 bin components for the asciidoc package.
@@ -76,17 +75,22 @@ man components for the asciidoc package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1536137479
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1570660594
+export GCC_IGNORE_WERROR=1
+export CFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$CFLAGS -fno-lto "
+export FFLAGS="$CFLAGS -fno-lto "
+export CXXFLAGS="$CXXFLAGS -fno-lto "
 %reconfigure --disable-static --sysconfdir=/usr/share/asciidoc/conf
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1536137479
+export SOURCE_DATE_EPOCH=1570660594
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/asciidoc
-cp COPYING %{buildroot}/usr/share/doc/asciidoc/COPYING
-cp COPYRIGHT %{buildroot}/usr/share/doc/asciidoc/COPYRIGHT
+mkdir -p %{buildroot}/usr/share/package-licenses/asciidoc
+cp COPYING %{buildroot}/usr/share/package-licenses/asciidoc/COPYING
+cp COPYRIGHT %{buildroot}/usr/share/package-licenses/asciidoc/COPYRIGHT
 %make_install
 
 %files
@@ -189,11 +193,11 @@ cp COPYRIGHT %{buildroot}/usr/share/doc/asciidoc/COPYRIGHT
 /usr/share/asciidoc/conf/asciidoc/xhtml11.conf
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/asciidoc/COPYING
-/usr/share/doc/asciidoc/COPYRIGHT
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/asciidoc/COPYING
+/usr/share/package-licenses/asciidoc/COPYRIGHT
 
 %files man
-%defattr(-,root,root,-)
+%defattr(0644,root,root,0755)
 /usr/share/man/man1/a2x.1
 /usr/share/man/man1/asciidoc.1
