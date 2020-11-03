@@ -4,7 +4,7 @@
 #
 Name     : asciidoc
 Version  : cd6762bd16b20e5cf19ceaffb8452df912bb5f6e
-Release  : 38
+Release  : 39
 URL      : https://github.com/asciidoc/asciidoc-py3/archive/cd6762bd16b20e5cf19ceaffb8452df912bb5f6e.tar.gz
 Source0  : https://github.com/asciidoc/asciidoc-py3/archive/cd6762bd16b20e5cf19ceaffb8452df912bb5f6e.tar.gz
 Summary  : No detailed summary available
@@ -69,6 +69,7 @@ man components for the asciidoc package.
 
 %prep
 %setup -q -n asciidoc-py3-cd6762bd16b20e5cf19ceaffb8452df912bb5f6e
+cd %{_builddir}/asciidoc-py3-cd6762bd16b20e5cf19ceaffb8452df912bb5f6e
 %patch1 -p1
 
 %build
@@ -76,21 +77,21 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1570660594
+export SOURCE_DATE_EPOCH=1604364439
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
-export FCFLAGS="$CFLAGS -fno-lto "
-export FFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$FFLAGS -fno-lto "
+export FFLAGS="$FFLAGS -fno-lto "
 export CXXFLAGS="$CXXFLAGS -fno-lto "
 %reconfigure --disable-static --sysconfdir=/usr/share/asciidoc/conf
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1570660594
+export SOURCE_DATE_EPOCH=1604364439
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/asciidoc
-cp COPYING %{buildroot}/usr/share/package-licenses/asciidoc/COPYING
-cp COPYRIGHT %{buildroot}/usr/share/package-licenses/asciidoc/COPYRIGHT
+cp %{_builddir}/asciidoc-py3-cd6762bd16b20e5cf19ceaffb8452df912bb5f6e/COPYING %{buildroot}/usr/share/package-licenses/asciidoc/075d599585584bb0e4b526f5c40cb6b17e0da35a
+cp %{_builddir}/asciidoc-py3-cd6762bd16b20e5cf19ceaffb8452df912bb5f6e/COPYRIGHT %{buildroot}/usr/share/package-licenses/asciidoc/54a4d5db170490e44134f319918be79b4f3264a7
 %make_install
 
 %files
@@ -194,8 +195,8 @@ cp COPYRIGHT %{buildroot}/usr/share/package-licenses/asciidoc/COPYRIGHT
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/asciidoc/COPYING
-/usr/share/package-licenses/asciidoc/COPYRIGHT
+/usr/share/package-licenses/asciidoc/075d599585584bb0e4b526f5c40cb6b17e0da35a
+/usr/share/package-licenses/asciidoc/54a4d5db170490e44134f319918be79b4f3264a7
 
 %files man
 %defattr(0644,root,root,0755)

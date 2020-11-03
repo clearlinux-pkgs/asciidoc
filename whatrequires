@@ -1,13 +1,18 @@
 # This file contains recursive sources that require this package
+Pacemaker
+audiofile
+awesome-wm
 cgit
 dracut
 dstat
+dvisvgm
 evtest
 fldigi
 git
 git-gui
 gnome-shell
 i3status
+ipmctl
 libX11
 libmodbus
 libnl
@@ -17,6 +22,9 @@ lttng-tools
 lttng-ust
 nasm
 ndctl
+nftables
+ntopng
+psensor
 spice
 spice-gtk
 syslinux
