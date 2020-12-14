@@ -4,7 +4,7 @@
 #
 Name     : asciidoc
 Version  : cd6762bd16b20e5cf19ceaffb8452df912bb5f6e
-Release  : 39
+Release  : 40
 URL      : https://github.com/asciidoc/asciidoc-py3/archive/cd6762bd16b20e5cf19ceaffb8452df912bb5f6e.tar.gz
 Source0  : https://github.com/asciidoc/asciidoc-py3/archive/cd6762bd16b20e5cf19ceaffb8452df912bb5f6e.tar.gz
 Summary  : No detailed summary available
