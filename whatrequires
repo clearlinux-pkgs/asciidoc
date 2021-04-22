@@ -2,6 +2,7 @@
 Pacemaker
 audiofile
 awesome-wm
+ccache
 cgit
 dracut
 dstat
@@ -23,8 +24,6 @@ lttng-ust
 nasm
 ndctl
 nftables
-ntopng
-psensor
 spice
 spice-gtk
 syslinux
