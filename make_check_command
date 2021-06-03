@@ -1,1 +1,1 @@
-python ./tests/testasciidoc.py update ; python ./tests/testasciidoc.py run
+python ./tests/testasciidoc.py run
