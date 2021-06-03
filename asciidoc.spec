@@ -4,7 +4,7 @@
 #
 Name     : asciidoc
 Version  : 9.1.0
-Release  : 45
+Release  : 46
 URL      : https://github.com/asciidoc-py/asciidoc-py/releases/download/9.1.0/asciidoc-9.1.0.tar.gz
 Source0  : https://github.com/asciidoc-py/asciidoc-py/releases/download/9.1.0/asciidoc-9.1.0.tar.gz
 Summary  : No detailed summary available
@@ -26,7 +26,6 @@ BuildRequires : python3
 BuildRequires : python3-dev
 BuildRequires : sed
 BuildRequires : source-highlight
-Patch1: noexit.patch
 
 %description
 Replaced the plain DocBook XSL admonition icons with Jimmac's DocBook
@@ -70,14 +69,13 @@ man components for the asciidoc package.
 %prep
 %setup -q -n asciidoc-9.1.0
 cd %{_builddir}/asciidoc-9.1.0
-%patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1622656967
+export SOURCE_DATE_EPOCH=1622692577
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -87,14 +85,11 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1622656967
+export SOURCE_DATE_EPOCH=1622692577
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/asciidoc
 cp %{_builddir}/asciidoc-9.1.0/COPYRIGHT %{buildroot}/usr/share/package-licenses/asciidoc/2410a431538d037cf19c5b43b49dffee29d3d8f2
 %make_install
-## install_append content
-ln -s asciidoc %{buildroot}/usr/bin/asciidoctor
-## install_append end
 
 %files
 %defattr(-,root,root,-)
@@ -105,7 +100,6 @@ ln -s asciidoc %{buildroot}/usr/bin/asciidoctor
 /usr/bin/a2x.py
 /usr/bin/asciidoc
 /usr/bin/asciidoc.py
-/usr/bin/asciidoctor
 
 %files data
 %defattr(-,root,root,-)
