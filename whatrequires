@@ -11,7 +11,6 @@ fldigi
 git
 git-gui
 gnome-shell
-i3status
 ipmctl
 libX11
 libmodbus
