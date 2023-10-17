@@ -1,8 +1,10 @@
 # This file contains recursive sources that require this package
-Pacemaker
+accel-config
 audiofile
 awesome-wm
+babeltrace
 cgit
+colm
 dracut
 dstat
 dvisvgm
@@ -10,15 +12,18 @@ evtest
 fldigi
 git
 git-gui
+gnome-remote-desktop
 gnome-shell
 ipmctl
 libX11
-libmodbus
 libnl
+libtraceevent
+libtracefs
 libzmq
 linux-tools
 lttng-tools
 lttng-ust
+lv2
 nasm
 ndctl
 nftables
@@ -26,4 +31,5 @@ spice
 spice-gtk
 syslinux
 tig
+trace-cmd
 wsjtx
