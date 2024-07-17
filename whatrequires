@@ -6,7 +6,6 @@ babeltrace
 cgit
 colm
 dracut
-dstat
 dvisvgm
 evtest
 fldigi
@@ -14,7 +13,6 @@ git
 git-gui
 gnome-remote-desktop
 gnome-shell
-ipmctl
 libX11
 libnl
 libtraceevent
@@ -27,6 +25,7 @@ lv2
 nasm
 ndctl
 nftables
+nut
 spice
 spice-gtk
 syslinux
