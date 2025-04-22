@@ -7,7 +7,7 @@
 #
 Name     : asciidoc
 Version  : 10.2.1
-Release  : 59
+Release  : 60
 URL      : https://files.pythonhosted.org/packages/1d/e7/315a82f2d256e9270977aa3c15e8fe281fd7c40b8e2a0b97e0cb61ca8fa0/asciidoc-10.2.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/1d/e7/315a82f2d256e9270977aa3c15e8fe281fd7c40b8e2a0b97e0cb61ca8fa0/asciidoc-10.2.1.tar.gz
 Summary  : AsciiDoc is a text document format for writing things.
